@@ -1,0 +1,75 @@
+
+      <div class="flight_cont">
+          <table>
+            <tr>
+              <td class="small_size1">DEPARTURE TIME    <i class="fas fa-angle-down"></i></td>
+              <td class="small_size2">ECONOMY CLASS</td>
+              <td class="small_size2">BUSINESS CLASS</td>
+              <td class="small_size2">1ST CLASS</td>
+            </tr>
+            </table>
+            <table >
+          <% flights.forEach((flight, index) => { %>
+            <tr id="selected_flight" onclick="selectedFlight(<%= index %>,<%= flight.flight_id %>,<%= flight.ecs %>,<%= flight.bcs %>,<%= flight.fcs %>)">
+              <td class="padding"><span class="big_size"><%= flight.origin_time %></span><br><span class="orange_data small_size"><%= flight.origin %></span></td>
+              <td class="padding centeralling"><span class="small_size"><%= flight.timeinterval %></span><br>
+                                  <i class="far fa-dot-circle orange_data"></i>
+                                  <span class="orange_data">........................</span>
+                                  <i class="far fa-dot-circle orange_data"></i></td>
+              <td class="gap"><span class="big_size"><%= flight.destination_time %></span><br><span class="orange_data small_size"><%= flight.destination %></span></td>
+              <td class="centeralling big_size" id="ec<%= index %>">
+                <script>
+                  if((<%= flight.ecs %>)>0){
+                    var node = document.createElement("span");
+                    node.onclick = function () {
+                                  document.getElementById("selectedPrice<%= index %>").innerHTML="<%= flight.ep %>";
+                                };
+                    node.classList.add("priceOutline");
+                    var textnode = document.createTextNode("$<%= flight.ep %>");
+                    node.appendChild(textnode);
+                    document.getElementById("ec<%= index %>").appendChild(node);
+
+                  //  document.getElementById("ec<%= index %>").append(" <p class='priceOutline'>$<%= flight.ep %></p> ");
+                  }else{
+                    document.getElementById("ec<%= index %>").append("SOLD OUT");
+                  }
+                </script>
+              </td>
+              <td class="centeralling big_size" id="bc<%= index %>">
+                <script>
+                  if((<%= flight.bcs %>)>0){
+                    var node = document.createElement("span");
+                    node.onclick = function () {
+                                  document.getElementById("selectedPrice<%= index %>").innerHTML="<%= flight.bp %>";
+                                };
+                    node.classList.add("priceOutline");
+                    var textnode = document.createTextNode("$<%= flight.bp %>");
+                    node.appendChild(textnode);
+                    document.getElementById("bc<%= index %>").appendChild(node);
+                    //document.getElementById("bc<%= index %>").append("<span class='priceOutline'>$<%= flight.bp %></span>");
+                  }else{
+                    document.getElementById("bc<%= index %>").append("SOLD OUT");
+                  }
+                </script>
+              </td>
+              <td class="centeralling big_size" id="fc<%= index %>">
+                <script>
+                  if((<%= flight.fcs %>)>0){
+                    var node = document.createElement("span");
+                    node.onclick = function () {
+                                  document.getElementById("selectedPrice<%= index %>").innerHTML="<%= flight.fp %>";
+                                };
+                    node.classList.add("priceOutline");
+                    var textnode = document.createTextNode("$<%= flight.fp %>");
+                    node.appendChild(textnode);
+                    document.getElementById("fc<%= index %>").appendChild(node);
+                    //document.getElementById("fc<%= index %>").append("<span class='priceOutline.>$<%= flight.fp %></span>");
+                  }else{
+                    document.getElementById("fc<%= index %>").append("SOLD OUT");
+                  }
+                </script>
+              </td><br>
+          </tr>
+          <div id="selectedPrice<%= index %>" style="display:none"><%= flight.ep %></div>
+       <% }) %>
+         </table>

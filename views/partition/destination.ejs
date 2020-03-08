@@ -1,0 +1,16 @@
+<div class="comman-lower-block">
+  <center>
+  <div>
+  <h3>AVAILABLE 6 DESTINATIONS:</h3>
+  <div class="destination_block">
+<% desct.forEach((desc, index) => { %>
+    <div class="imageclass">
+      <img src="\assets\img\<%= desc.destination_name %>.jpg">
+      <div class="imageinnerclass" onclick="found_destinationdata(this.innerHTML)"><%= desc.destination_name %>  <br><%= desc.destination_desc %></div>
+    </div>
+<% }) %>
+</div>
+  <img src="\assets\img\solar_system.jpg">
+</div>
+  </center>
+</div>

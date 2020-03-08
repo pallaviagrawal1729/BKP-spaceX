@@ -1,0 +1,24 @@
+<center>
+  <div class="bodyImage">
+    <div><img src="/assets/img/spaced.jpg"></div><br>
+    <p class="titles1"><i class="fas fa-thumbs-up"></i> You have successfully booked flight for <%= destinations %>.</p>
+    <table class="contInfo">
+      <tr>
+        <td class="values bookingPadding"><span class="element"><%= origins %></span><br><%= departs %><br><%= time[0].ot %></td>
+        <td class="values bookingPadding"><i class="fas fa-space-shuttle"></i></td>
+        <td class="values bookingPadding"><span class="element"><%= destinations %></span><br><%= departs %><br><%= time[0].dt %></td>
+      </tr>
+     </table><br><br>
+    <table class="contInfo">
+      <tr>
+        <td class="values bookingPadding"><span class="element">PRICE</span><br>$<%= costs %></td>
+        <td class="values bookingPadding"><span class="element">PNR</span><BR><%= id %></td>
+        <td class="values bookingPadding"><span class="element">Name</span><BR><%= pa %></td>
+        <td class="values bookingPadding"><span class="element">Flight No.</span><BR><%= fi %></td>
+        <td class="values bookingPadding"><span class="element">Seats no.</span><BR><%= si %></td>
+      </tr>
+    </table>
+    <p class="titles">Have a safe and great journey.<i class="fas fa-smile-wink"></i></p>
+    <button type="button" class="btn1 btn-lg" onclick="window.location.href = '/';">Book another ticket</button>
+  </div>
+</center>

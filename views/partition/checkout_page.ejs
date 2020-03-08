@@ -1,0 +1,119 @@
+<div class="checkoutBack">
+<center>
+  <table>
+    <tr>
+      <td>
+        <p class="checkoutFontSize">Checkout</p>
+        <p class="first_para">Please select avaliable seats and parameters<br> of flight.After that you can pay with apple pay or <br>other payment option</p>
+        <h6 class="bottom_marzin"><span id="noOfSeatsSelected">0</span> SEATS CHOSEN:</h6>
+        <div id="seatCounter">
+        </div>
+        <p>YOUR TRAVEL MOOD:</p>
+        <p class="first_para"><input type="radio" name="radio" id="radio1" value="Business Travel"> Business Travel</p>
+        <p class="first_para"><input type="radio" name="radio" id="radio2" value="Do not disturbe" checked> Do not disturbe</p>
+        <p class="first_para"><input type="radio" name="radio" id="radio3" value="I would like to chat during flight"> I would like to chat during flight</p>
+        <table class="balTable">
+          <tr>
+            <td class="left_text fontSize1">BALANCE:</td>
+          </tr>
+          <tr>
+            <td class="left_text fontSize2">fare(*<span id="noOfPassanger"><%= passenger %></span>)</td>
+            <td class="right_text fontSize2" id="price">$<%= price %></td>
+          </tr>
+          <tr>
+            <td class="left_text fontSize2">Taxes & Fees</td>
+            <td class="right_text fontSize2" id="tax">$<%= tax %></td>
+          </tr>
+          <tr>
+            <td class="left_text fontSize1">Name:</td>
+            <td class="left_text fontSize1"><input type="text" id="passengerName"></td>
+          </tr>
+          <tr>
+            <td class="left_text fontSize1">Contact No. :</td>
+            <td class="left_text fontSize1"><input type="text" id="passengerNo"></td>
+          </tr>
+          <tr>
+            <td class="checkoutFontSize" id="payCost">$<span id="payment"><%= finalAmount %></span></td>
+            <td><button type="button" class="btn btn-lg" onclick="book()">Pay Now</button></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <div class="seatSection">
+          <table>
+            <tr>
+              <td>
+                <div class="seatMargin">A</div>
+              </td>
+              <td>
+                <div class="seatMargin">B</div>
+              </td>
+              <td>
+                <div class="seatMargin">C</div>
+              </td>
+              <td>
+                <div class="seatMargin"></div>
+              </td>
+              <td>
+                <div class="seatMargin">D</div>
+              </td>
+              <td>
+                <div class="seatMargin">E</div>
+              </td>
+              <td>
+                <div class="seatMargin">F</div>
+              </td>
+            </tr>
+
+            <% for(var i=0; i<seats; i++) {%>
+
+            <tr>
+              <td>
+                <div class="seatOutline seatMargin" id="A<%=i+1 %>" onclick=seatClick(this.id)>
+                </div>
+              </td>
+              <td>
+                <div class="seatOutline seatMargin" id="B<%=i+1 %>" onclick=seatClick(this.id)> </div>
+              </td>
+              <td>
+                <div class="seatOutline seatMargin" id="C<%=i+1 %>" onclick=seatClick(this.id)> </div>
+              </td>
+              <td>
+                <div class="seatMargin"><%=i+1 %></div>
+              </td>
+              <td>
+                <div class="seatOutline seatMargin" id="D<%=i+1 %>" onclick=seatClick(this.id)> </div>
+              </td>
+              <td>
+                <div class="seatOutline seatMargin" id="E<%=i+1 %>" onclick=seatClick(this.id)> </div>
+              </td>
+              <td>
+                <div class="seatOutline seatMargin" id="F<%=i+1 %>" onclick=seatClick(this.id)> </div>
+              </td>
+            </tr>
+            <% } %>
+          </table>
+          <script>
+            var listSeat = document.getElementById("seatBookedlist").innerHTML;
+            var finalListSeat = listSeat.split("-");
+            for (var j = 0; j < finalListSeat.length; j++) {
+              //alert("Alreeady Booked"  + finalListSeat[j]);
+              document.getElementById(finalListSeat[j]).style.backgroundColor = "red";
+              document.getElementById(finalListSeat[j]).innerHTML = "B";
+            }
+          </script>
+        </div>
+      </td>
+      <td><br><br>
+        <img src="/assets/img/checkoutRocket.jpg">
+      </td>
+    </tr>
+  </table>
+  <div id="destinationdata" style="display:none"><%= destinations %></div>
+  <div id="departdata" style="display:none"><%= departs %></div>
+  <div id="origindata" style="display:none"><%= origins %></div>
+  <div id="flightId" style="display:none"><%= flightId %></div>
+  <div id="seatBookedlist" style="display:none"><%= bookedSeats %></div>
+  <div id="noOfSeats" style="display:none"><%= seats %></div>
+</center>
+</div>

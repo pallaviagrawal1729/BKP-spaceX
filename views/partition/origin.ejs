@@ -1,0 +1,17 @@
+<div class="comman-lower-block">
+  <center>
+    <div class="origin-block">
+      <div class="dropdown">
+        <div id="myDropdown">
+          <!--<i class="fa fa-search"></i>-->
+          <input type="search" class="searchbox" placeholder=" Search...." id="myInput" onkeyup="filterFunction()" autocomplete="off">
+
+          <br>
+          <% origins.forEach((origin, index) => { %>
+          <a id="hoverid" onclick="found_origindata(this.innerHTML)"><%= origin.origin_city %> <%= origin.origin_airport %> <%= origin.origin_code %></a><br>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </center>
+</div>

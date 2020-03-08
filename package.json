@@ -1,0 +1,26 @@
+{
+  "name": "spaceX",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dateformat": "^3.0.3",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.4",
+    "hh-mm-ss": "^1.2.0",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1",
+    "nodemon": "^2.0.2",
+    "req-flash": "^0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

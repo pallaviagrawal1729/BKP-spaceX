@@ -1,0 +1,29 @@
+<div class="comman-lower-block">
+  <center>
+    <p class="in_line" id="first" onclick="selectedbar1()">ROUND TRIP </p>
+    <p class="underline" id="second" onclick="selectedbar2()"> ONE WAY </p>
+    <p class="in_line" id="third" onclick="selectedbar3()"> MULTI PLANET</p>
+    <br><br><br>
+    <table>
+
+      <tr>
+        <% depart.forEach((dpt, index) => { %>
+        <td class="day_size" onclick=chosenDate(<%=index %>)>
+          <center>
+          <%= dpt.dayname %>
+          <br>
+          <div id="dateField<%= index %>" style="display:none"> <%= dpt.date %></div>
+          <div id="flightId<%= index %>" style="display:none"> <%= dpt.flight_id %></div>
+          <div class="date-block selectedblock"><%= dpt.monthname %><BR>
+            <p class="date"><%= dpt.day %> </p>
+
+            <p class="rs">from $<%= dpt.price %></p>
+          </div>
+          </center>
+        </td>
+        <% }) %>
+      </tr>
+
+    </table>
+  </center>
+</div>

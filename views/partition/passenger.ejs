@@ -1,0 +1,66 @@
+<div class="comman-lower-block">
+  <div class="catagory-class">
+    <p class="in_line" id="first" onclick="selectedbar11()">1ST CLASS</p>
+    <P class="underline" id="second" onclick="selectedbar22()">BUSINESS CLASS</P>
+    <P class="in_line" id="third" onclick="selectedbar33()">ECONOMY CLASS</P><br><br><br>
+    <table>
+      <tr>
+        <td class="space">ADULTS</td>
+        <td class="space">CHILDREN AGE 2-17</td>
+        <td class="space">LAP INFANTS AGE 0-2</td>
+      </tr>
+      <tr>
+        <td class="space">
+          <div class="number">
+            <button class="in_line1" id="adu-plus" onclick="adult_data_minus()">-</button>
+            <input type="text" class="in_line2" id="adu-data" value="0">
+            <button class="in_line3" id="adu-minus" onclick="adult_data_plus()">+</button>
+          </div>
+        </td>
+        <td class="space">
+          <div class="number">
+            <button class="in_line1" id="chl-plus" onclick="child_data_minus()">-</button>
+            <input type="text" class="in_line2" id="chl-data" value="0">
+            <button class="in_line3" id="chl-minus" onclick="child_data_plus()">+</button>
+          </div>
+        </td>
+        <td class="space">
+          <div class="number">
+            <button class="in_line1" id="if-plus" onclick="if_data_minus()">-</button>
+            <input type="text" class="in_line2" id="if-data" value="0">
+            <button class="in_line3" id="if-minus" onclick="if_data_plus()">+</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <table class="low_seat1">
+      <tr>
+        <td>
+          <p>
+            <font size="10"><%= passenger[0].bcs %></font><br>SEATS
+          </p>
+        </td>
+      </tr>
+    </table>
+    <table class="low_seat2">
+      <tr>
+        <td>
+          <p>
+            <font size="10"><%= passenger[0].ecs %></font><br>SEATS
+          </p>
+        </td>
+      </tr>
+    </table>
+    <table class="low_seat3">
+      <tr>
+        <td>
+          <p>
+            <font size="10"><%= passenger[0].fcs %></font><br>SEATS
+          </p>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
